@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random pw</title>
+</head>
+<body>
+    <h1>Random Password Generator</h1>
+    <input type = "text" id="pw" readonly=''>
+    <button id = "btn"> Click me</button>
+    
+</body>
+<script>
+    let pw = document.getElementById('pw')
+    var CharHaru = 'QWERTYUIOP[]ASDFGHJKLZXCV"BNMqwertyuiopasdfghjklzxcvbnm<>?:"@#$%^&*()_+'
+    var passwordLength = 8
+    var btn = document.getElementById('btn')
+    var password = ""
+    btn.addEventListener('click',function(){
+        var password = ""
+
+        for(let i=0;i<passwordLength;i++){
+        var randomVal = Math.floor(Math.random()*CharHaru.length)
+        password += CharHaru.substring(randomVal,randomVal+1)
+    }
+        pw.value = password
+    })
+</script>
+</html>
